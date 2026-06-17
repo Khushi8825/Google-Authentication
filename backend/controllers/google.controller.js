@@ -6,11 +6,12 @@ import dotenv from "dotenv";  //to load variables from .env file
 dotenv.config();
 
 const client = new OAuth2Client(
-    process.env.GOOGLE_CLIENT_ID,
-    process.env.GOOGLE_CLIENT_SECRET,
+    process.env.VITE_GOOGLE_CLIENT_ID,
+    process.env.VITE_GOOGLE_CLIENT_SECRET,
     "http://localhost:5173/home"
 )
-
+console.log("ClientId: ", process.env.GOOGLE_CLIENT_ID);
+console.log("ClientID Secret: ", process.env.GOOGLE_CLIENT_SECRET);
 const googleController = async (req, res) => {
     try {
         const { code } = req.body;
